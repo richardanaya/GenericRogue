@@ -1,0 +1,14 @@
+html, body {
+    background-color: #222;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -300px;
+}

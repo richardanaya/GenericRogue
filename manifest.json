@@ -1,0 +1,15 @@
+{
+  "name": "Underdark",
+  "description": "Underdark is a subterrainian roguelike.  You play as a drow among the depths of caverns that is your home.  Can you survive?",
+  "version": "2",
+  "app": {
+    "launch": {
+      "local_path": "index.html"
+    }
+  },
+  "offline_enabled": true,
+  "icons": {
+    "16": "icon_16.png",
+    "128": "icon_128.png"
+  }
+}
