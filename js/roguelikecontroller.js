@@ -2,6 +2,8 @@ var RoguelikeController = function(view,map) {
 	this.view = view;
 	this.map = map;
 	this.view.keyPressed.subscribe(bind(this.onKeyPressed,this));
+	this.player = new PlayerEntity();
+	map.getTile(0,0).push(this.player);
 };
 
 RoguelikeController.prototype.render = function() {
@@ -17,14 +19,15 @@ RoguelikeController.prototype.onKeyPressed = function(keyCode) {
 
     //controls
 	if (keyCode == LEFT) {
-		this.playerLocationX--;
+		this.player.moveLeft();
 	} else if (keyCode == UP) {
-		this.playerLocationY--;
+		this.player.moveUp();
 	} else if (keyCode == RIGHT) {
-		this.playerLocationX++;
+		this.player.moveRight();
 	} else if (keyCode == DOWN) {
-		this.playerLocationY++;
+		this.player.moveDown();
 	}
+	this.map.executeCommands();
 	this.render();
 };
 

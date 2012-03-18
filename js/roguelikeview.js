@@ -2,7 +2,15 @@ var visualizations = {
 	"GRASS": {
 		color: "green", symbol: "."
 
-	}
+	},
+	"PLAYER": {
+			color: "white", symbol: "@"
+
+		},
+	"KOBALD": {
+			color: "red", symbol: "k"
+
+		}
 };
 
 var RoguelikeView = function() {

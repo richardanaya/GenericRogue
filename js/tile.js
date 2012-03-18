@@ -18,6 +18,18 @@ Tile.prototype.pop = function() {
 	return e;
 };
 
+Tile.prototype.remove = function(e) {
+	e.owningTile = null;
+	var idx = this.entities.indexOf(e);
+	if(idx != -1) {
+		this.entities.splice(idx,1);
+		this.map.update(this);
+	}
+	else {
+		throw "Removing entity from tile it does not belong to";
+	}
+};
+
 Tile.prototype.get = function(i) {
 	return this.entities[i];
 };
