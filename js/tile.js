@@ -1,4 +1,5 @@
-var Tile = function(x, y) {
+var Tile = function(map, x, y) {
+	this.map = map;
 	this.entities = [];
 	this.x = x;
 	this.y = y;
@@ -7,11 +8,13 @@ var Tile = function(x, y) {
 Tile.prototype.push = function(e) {
 	e.owningTile = this;
 	this.entities.push(e);
+	this.map.update(this);
 };
 
 Tile.prototype.pop = function() {
 	var e = this.entities.pop();
 	e.owningTile = null;
+	this.map.update(this);
 	return e;
 };
 

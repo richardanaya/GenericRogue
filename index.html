@@ -3,7 +3,24 @@
     <title>Underdark</title>
     <link rel="stylesheet" type="text/css" href="css/roguelike.css" />
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/roguelike.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/publisher.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/tile.js"></script>
+    <script type="text/javascript" src="js/entity.js"></script>
+    <script type="text/javascript" src="js/roguelikeview.js"></script>
+    <script type="text/javascript" src="js/roguelikecontroller.js"></script>
+    <script type="text/javascript" src="js/simplefightmap.js"></script>
 </head>
 <body></body>
+<script>
+    $(window).load(function () {
+        var map = new SimpleFightMap();
+        map.generate();
+
+        var view = new RoguelikeView();
+        var controller = new RoguelikeController(view,map);
+        controller.start();
+   	});
+</script>
 </html>
